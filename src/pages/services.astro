@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Packages from '../components/Packages.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { programs } from '../site';
+---
+<BaseLayout title="Training, Monthly Packages & Rates" description="Explore one-on-one soccer training, small-group sessions, performance work, and monthly training enquiries with Moïse in New York City.">
+<section class="shell pb-16 pt-14 sm:pt-20"><p class="eyebrow mb-6">Training & plans</p><h1 class="display max-w-4xl text-5xl sm:text-8xl">Find your focus.<br /><span class="text-forest">Put in the work.</span></h1><p class="body-copy mt-7 max-w-2xl">Individual attention, shared energy, and purposeful movement. Find a training format that fits your next step.</p></section>
+<div class="shell">{programs.map((program,i)=><section class="section-rule grid gap-7 py-10 md:grid-cols-[0.8fr_1.2fr] md:items-center"><img src={program.image} alt={program.title+' on the soccer field'} width="480" height="640" loading="lazy" class="aspect-[4/3] max-h-80 w-full object-cover" /><div class="md:px-8"><p class="eyebrow mb-5">0{i+1} / {program.label}</p><h2 class="display text-4xl sm:text-5xl">{program.title}</h2><p class="body-copy mt-5">{program.description}</p><a class="text-link mt-5" href="/contact/">Ask about this training ↗</a></div></section>)}</div>
+<Packages /><CallToAction />
+</BaseLayout>

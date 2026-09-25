@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@theme {
+  --color-ink: #101713;
+  --color-muted: #59615a;
+  --color-paper: #f6f7f2;
+  --color-accent: #c6f153;
+  --color-forest: #075c16;
+  --font-sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --font-display: "Arial Narrow", "Avenir Next Condensed", Impact, sans-serif;
+}
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+  body { @apply bg-paper text-ink font-sans antialiased; margin: 0; }
+  h1,h2,h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  button,input,textarea,select { font: inherit; }
+  button,summary { cursor: pointer; }
+  :focus-visible { outline: 3px solid #075c16; outline-offset: 5px; }
+  .dark-surface :focus-visible { outline-color: #c6f153; }
+  ::selection { background: #c6f153; color: #101713; }
+  @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition-duration:0s!important; } }
+}
+@layer components {
+  .shell { @apply mx-auto w-full max-w-[1360px] px-6 sm:px-10 lg:px-16; }
+  .eyebrow { @apply flex items-center gap-3 text-sm font-bold uppercase tracking-[0.13em]; }
+  .eyebrow::before { content:''; @apply block h-2 w-2 shrink-0 bg-forest; }
+  .dark-surface .eyebrow::before { @apply bg-accent; }
+  .display { @apply font-display font-extrabold uppercase tracking-[-0.025em] leading-[0.97]; }
+  .body-copy { @apply text-lg leading-relaxed text-muted; }
+  .button { @apply inline-flex min-h-12 items-center justify-center gap-5 bg-accent px-6 py-3.5 text-sm font-bold uppercase tracking-[0.04em] text-ink transition-colors hover:bg-[#d9ff77]; }
+  .button-dark { @apply bg-ink text-white hover:bg-forest; }
+  .button-outline { @apply border border-current bg-transparent text-inherit hover:bg-white/10; }
+  .text-link { @apply inline-flex min-h-11 items-center gap-3 text-sm font-bold uppercase tracking-[0.04em] underline underline-offset-8 decoration-current/40 hover:decoration-current; }
+  .field { @apply mt-2 block w-full min-w-0 rounded-none border border-ink/25 bg-white px-4 py-3 text-ink; }
+  .section-rule { @apply border-t border-ink/15; }
+  .section-pad { @apply py-16 sm:py-24; }
+  .section-head { @apply mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end; }
+  .section-title { @apply font-display text-4xl font-extrabold uppercase leading-none tracking-[-0.02em] sm:text-6xl; }
+  .chip { @apply inline-flex items-center border border-current/30 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider; }
+  .media-image { @apply h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]; }
+  .outline-word { color:transparent; -webkit-text-stroke:1.5px #c6f153; }
+}

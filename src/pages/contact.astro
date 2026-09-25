@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { business } from '../site';
+---
+<BaseLayout title="Contact Coach Charles" description="Contact Moïse Soccer & Performance Training about private training, monthly packages, small-group events, or payment questions in NYC.">
+<section class="shell section-pad grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20"><div><p class="eyebrow mb-6">Contact us</p><h1 class="display text-5xl sm:text-7xl">Let’s talk<br /><span class="text-forest">about your game.</span></h1><p class="body-copy mt-7 max-w-md">Questions about sessions, monthly plans, or upcoming groups? Tell Coach Charles what you’re looking for.</p><dl class="mt-10 space-y-7"><div><dt class="text-sm text-muted">Training area</dt><dd class="mt-2 text-xl font-semibold">{business.location}</dd><dd class="mt-1 text-sm text-muted">Exact location confirmed with the coach.</dd></div><div><dt class="text-sm text-muted">Find us on Instagram</dt><dd><a class="text-link mt-1 break-all" href={business.instagram} target="_blank" rel="noopener noreferrer">@moisesoccerperformancetraining ↗</a></dd></div>{business.email&&<div><dt class="text-sm text-muted">Email</dt><dd><a class="text-link" href={'mailto:'+business.email}>{business.email}</a></dd></div>}{business.phone&&<div><dt class="text-sm text-muted">Phone</dt><dd><a class="text-link" href={'tel:'+business.phone.replace(/[^+\d]/g,'')}>{business.phone}</a></dd></div>}</dl><div class="mt-10 border-t border-ink/20 pt-7"><p class="font-bold">Ready to choose a time?</p><a class="button button-dark mt-4" href="/booking/">Go to booking ↗</a></div></div><ContactForm /></section>
+</BaseLayout>
