@@ -1,4 +1,11 @@
-// Confirmed profile facts: Charles Okeke, NYC, soccer/performance, 1-on-1/small groups.
+// Coach biography supplied by the business owner.
+export const coachBio = [
+  "Coach Charles Okeke is the Founder and Head Trainer of Moise Soccer & Performance Training, a player-development program dedicated to developing technically skilled, confident, disciplined, and well-rounded soccer players.",
+  "With playing experience across both defensive and midfield positions, Coach Charles brings a comprehensive understanding of the technical, tactical, physical, and mental demands of the game. His coaching approach combines technical excellence with athletic performance, creating purposeful training environments designed to challenge players, build confidence, and maximize individual development.",
+  "Coach Charles has also gained coaching experience with Brooklyn Football Club Women and the New York Cosmos, serving as a Performance Coach. These experiences have further strengthened his understanding of performance development and the demands required to compete at higher levels of the game.",
+  "Through individual and small-group training, Coach Charles places a strong emphasis on technical mastery, quality repetition, decision-making, and confidence under pressure. His sessions incorporate 1v1 attacking and defending, ball mastery, speed, agility, balance, coordination, and game-specific movement, helping players develop the tools needed to perform effectively in competitive environments.",
+  "His coaching philosophy is built on discipline, consistency, accountability, and attention to detail. Coach Charles believes that meaningful player development extends beyond technical ability—it requires the development of confidence, character, work ethic, and a mindset committed to continuous improvement."
+];
 // Replace empty rates, events, reviews and payment URL only with confirmed information.
 export const business = {
   name: 'Moïse Soccer & Performance Training',
@@ -10,7 +17,8 @@ export const business = {
   paymentMethods: ['Zelle', 'Venmo', 'Cash App'],
   email: '',
   phone: '',
-  bio: 'Charles Okeke is the coach behind Moïse Soccer & Performance Training in New York City. His training brings together player development, soccer skills, and performance work through one-on-one and small-group sessions.',
+  coachRole: 'Founder & Head Trainer | Moise Soccer & Performance Training',
+  bio: coachBio[0],
 };
 export const navigation = [
   { href: '/about/', label: 'The coach' },

@@ -2,10 +2,27 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CallToAction from '../components/CallToAction.astro';
 import Testimonials from '../components/Testimonials.astro';
-import { business } from '../site';
+import { business, coachBio } from '../site';
 ---
-<BaseLayout title="Coach Charles Okeke — Bio" description={business.bio}>
-<section class="shell section-pad grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center"><div><p class="eyebrow mb-6">The coach / Bio</p><h1 class="display text-6xl sm:text-8xl">Charles<br />Okeke<span class="text-forest">.</span></h1><p class="body-copy mt-8 max-w-xl">{business.bio}</p><div class="mt-8 flex flex-wrap gap-3"><span class="chip">New York City</span><span class="chip">Soccer training</span><span class="chip">Performance</span></div><a class="button button-dark mt-9" href="/booking/">Train with Charles ↗</a></div><img src="/images/coach-charles.jpg" alt="Charles Okeke, Moïse soccer and performance coach" width="360" height="640" class="aspect-[4/5] w-full object-cover object-top" /></section>
-<section class="dark-surface bg-ink text-white"><div class="shell section-pad grid gap-10 md:grid-cols-2"><div><p class="eyebrow mb-5">The training focus</p><h2 class="section-title">Build the player.<br /><span class="text-accent">Develop the game.</span></h2></div><div><p class="text-lg leading-relaxed text-white/75">The Moïse training feed features ball work, speed and agility, explosive movement, and technical fitness. Explore the sessions to see the work in action, then talk with Charles about the focus that fits your goals.</p><a class="text-link mt-6 text-accent" href="/highlights/">See training highlights ↗</a><p class="mt-8 text-sm text-white/60">More about Charles’s background and coaching journey will be added here.</p></div></div></section>
-<Testimonials /><CallToAction />
+<BaseLayout title="Coach Charles Okeke — Bio" description="Meet Coach Charles Okeke, Founder and Head Trainer of Moise Soccer & Performance Training. Explore his experience and approach to player development.">
+  <section class="shell section-pad grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+    <div>
+      <p class="eyebrow mb-6">The coach / Bio</p>
+      <h1 class="display text-5xl sm:text-7xl"><span class="mb-2 block text-3xl text-forest sm:text-4xl">Coach</span>Charles<br />Okeke<span class="text-forest">.</span></h1>
+      <p class="mt-6 max-w-xl text-lg font-semibold">{business.coachRole}</p>
+      <p class="body-copy mt-6 max-w-xl">{coachBio[0]}</p>
+      <a class="button button-dark mt-9" href="/booking/">Train with Charles ↗</a>
+    </div>
+    <img src="/images/coach-charles.png" alt="Coach Charles Okeke on the sidelines at a soccer stadium" width="2242" height="1490" fetchpriority="high" class="aspect-[4/5] w-full object-cover object-top" />
+  </section>
+  <section class="shell section-pad section-rule">
+    <div class="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+      <div><p class="eyebrow mb-5">Experience & philosophy</p><h2 class="section-title">Developing<br />the whole<br /><span class="text-forest">player.</span></h2></div>
+      <div class="max-w-3xl space-y-6">
+        {coachBio.slice(1).map(paragraph => <p class="body-copy">{paragraph}</p>)}
+        <a class="text-link" href="/highlights/">See training highlights ↗</a>
+      </div>
+    </div>
+  </section>
+  <Testimonials /><CallToAction />
 </BaseLayout>
