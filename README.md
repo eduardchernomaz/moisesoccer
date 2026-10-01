@@ -32,7 +32,7 @@ No real booking or payment was submitted during development. Calendly controls s
 Most content is in **src/site.ts**:
 - business: name, coach, location, short bio, optional email/phone, Instagram, Calendly, accepted payment methods.
 - plans: approved prices in rate, package descriptions and confirmed session counts/terms in details.
-- events: confirmed title, date, location, details, and rate.
+- events: program title, schedule, birth-year groups, venue, rates, training focus, flyer, and registration URL. The Events component appears on Home and Events; ProgramNotice links to it from Training & plans and Booking. Update or remove seasonal programs here when registration closes.
 - testimonials: real approved quote, name, and role. No fabricated reviews are included.
 - highlights: titles, preview images, dates, and original Instagram reel URLs.
 - photos: local image path, alternative text, caption, and original post link.

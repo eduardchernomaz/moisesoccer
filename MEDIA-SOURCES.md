@@ -16,3 +16,11 @@ Training images were exported from the public Instagram profile supplied by the 
 | small-group.jpg | https://www.instagram.com/moisesoccerperformancetraining/reel/DcbUcz2ubgi/ |
 
 These are profile-grid preview images/session stills, not downloaded videos or full-resolution originals. Coach and player images are not AI-generated. Confirm permission for website publication and replace with trainer-provided originals where practical. No testimonial or performance claim is inferred from a photo.
+
+## Winter Soccer Group Training
+
+The flyer at public/images/winter-soccer-training.png was supplied by the user on October 1, 2026 and is used unchanged. Schedule and training focus follow the flyer; Sunday timing, indoor venue, rates, footwear, and payment requirements follow the supplied Google registration form. No calendar year is assumed.
+
+Registration: https://docs.google.com/forms/d/e/1FAIpQLSdTpmDdOhjB_6VxcbX7urUJUkks8y3EErEgbYjLyypWhiiI_g/viewform
+
+The user confirmed birth years 2017–2014 for the younger group. The original flyer says 2016–2014; a visible correction below the flyer reflects the confirmed range.
