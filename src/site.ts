@@ -52,8 +52,31 @@ export const photos = [
 ];
 export interface Testimonial { quote: string; name: string; role: string; }
 export const testimonials: Testimonial[] = []; // Approved, verbatim reviews only.
-export interface TrainingEvent { title: string; date: string; location: string; details: string; rate: string; }
-export const events: TrainingEvent[] = []; // Confirmed events only.
+export interface TrainingEvent {
+  id: string; title: string; date: string; location: string; details: string;
+  image: string; registrationUrl: string; footwear: string; flyerNote?: string;
+  groups: { label: string; dates: string[] }[];
+  focus: string[]; rates: { label: string; price: string }[];
+}
+// Dates follow the supplied flyer; rates, venue and requirements follow the registration form.
+// No calendar year is added because neither source specifies one.
+export const events: TrainingEvent[] = [{
+  id: 'winter-training',
+  title: 'Winter Soccer Group Training',
+  date: 'Sundays · 8–9 AM',
+  location: '445 Winding Road, Old Bethpage, NY 11804',
+  details: 'Maximum 10 players per session. Minimum 4 consecutive weeks to register.',
+  image: '/images/winter-soccer-training.png',
+  flyerNote: 'Age-group update: the younger group includes birth years 2017–2014, as listed in the registration form.',
+  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdTpmDdOhjB_6VxcbX7urUJUkks8y3EErEgbYjLyypWhiiI_g/viewform',
+  footwear: 'Indoor / turf shoes only',
+  groups: [
+    { label: '2017–2014', dates: ['Dec 6, 13, 20', 'Jan 3, 10, 17'] },
+    { label: '2013–2011', dates: ['Jan 24, 31', 'Feb 7, 21, 28', 'Mar 7'] },
+  ],
+  focus: ['Technical training / ball mastery', 'Agility / coordination', '1v1 attacking & defending', 'Scrimmage'],
+  rates: [{ label: '4 weeks', price: '$320' }, { label: '6 weeks', price: '$480' }],
+}];
 export function validExternalUrl(value: string): string | undefined {
   try { const url = new URL(value); return url.protocol === 'https:' ? url.href : undefined; } catch { return undefined; }
 }

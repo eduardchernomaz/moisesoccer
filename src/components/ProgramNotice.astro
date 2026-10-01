@@ -1,0 +1,4 @@
+---
+import { events } from '../site';
+---
+{events.map(event => <aside class="dark-surface bg-forest text-white"><div class="shell flex flex-col gap-5 py-7 md:flex-row md:items-center md:justify-between"><div><p class="font-display text-3xl font-extrabold uppercase">{event.title}</p><p class="mt-1 text-white/85">{event.date} · Old Bethpage · Indoor</p></div><a class="button shrink-0" href={'/events/#' + event.id}>View dates & sign up ↗</a></div></aside>)}
