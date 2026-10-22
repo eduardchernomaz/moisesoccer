@@ -1,4 +1,19 @@
 ---
 import { events } from '../site';
+interface Props { homepage?: boolean; }
+const { homepage = false } = Astro.props;
 ---
-{events.map(event => <aside class="dark-surface bg-forest text-white"><div class="shell flex flex-col gap-5 py-7 md:flex-row md:items-center md:justify-between"><div><p class="font-display text-3xl font-extrabold uppercase">{event.title}</p><p class="mt-1 text-white/85">{event.date} · Old Bethpage · Indoor</p></div><a class="button shrink-0" href={'/events/#' + event.id}>View dates & sign up ↗</a></div></aside>)}
+{events.map(event => (
+  <aside aria-label={event.title} class="dark-surface border-b border-white/15 bg-forest text-white">
+    <div class="shell flex flex-col gap-5 py-7 lg:flex-row lg:items-center lg:justify-between">
+      <div>
+        <p class="font-display text-3xl font-extrabold uppercase">{event.title}</p>
+        <p class="mt-1 text-white/85">{event.date} · Indoor · Old Bethpage</p>
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center gap-x-6 gap-y-3">
+        {homepage && <a class="button" href={event.registrationUrl} target="_blank" rel="noopener noreferrer" aria-label={'Sign up for ' + event.title + ' (opens Google Forms in a new tab)'}>Sign up <span aria-hidden="true">↗</span></a>}
+        <a class={homepage ? 'text-link text-white' : 'button'} href={homepage ? '#' + event.id : '/events/#' + event.id}>{homepage ? 'View dates & details' : 'View dates & sign up'} <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </aside>
+))}

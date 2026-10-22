@@ -4,11 +4,13 @@ import CallToAction from '../components/CallToAction.astro';
 import VideoSection from '../components/VideoSection.astro';
 import Packages from '../components/Packages.astro';
 import Events from '../components/Events.astro';
+import ProgramNotice from '../components/ProgramNotice.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Gallery from '../components/Gallery.astro';
 import { business, programs } from '../site';
 ---
 <BaseLayout title="Personal Soccer & Performance Training in NYC" description="Train with Charles Okeke at Moïse Soccer & Performance Training in NYC. Explore private sessions, small-group training, highlights, and booking.">
+<ProgramNotice homepage />
 <section class="dark-surface relative overflow-hidden bg-ink text-white">
 <div class="shell grid lg:min-h-[680px] lg:grid-cols-[1.05fr_1fr]">
 <div class="relative z-10 py-14 sm:py-20 lg:pr-8"><p class="eyebrow mb-7 text-white/75">New York City · Player development</p><h1 class="display text-[clamp(3.4rem,7.5vw,6.8rem)]">Own your<br />game.<br /><span class="outline-word">Build your<br class="sm:hidden" /> edge.</span></h1><p class="mt-7 max-w-md text-lg leading-relaxed text-white/70">Personal soccer and performance training with Coach Charles Okeke. Focused work. Purposeful movement. Your next step forward.</p><div class="mt-8 flex flex-wrap gap-4"><a class="button" href="/booking/">Book a session <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#videos">Watch the training <span aria-hidden="true">▶</span></a></div></div>
